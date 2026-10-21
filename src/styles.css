@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #121614;
+  --color-surface: #1c2420;
+  --color-surface-2: #27312c;
+  --color-fg: #eef3ef;
+  --color-muted: #93a199;
+  --color-brass: #d4a054;
+  --color-border: #31403a;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --shadow-dock: 0 16px 40px rgb(0 0 0 / 0.38);
+}
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    margin: 0;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  button:focus-visible,
+  input:focus-visible {
+    outline: 2px solid var(--color-brass);
+    outline-offset: 2px;
+  }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 2.75rem;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 0.25rem;
+    border-radius: 999px;
+    background: var(--color-border);
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.375rem;
+    height: 1.375rem;
+    margin-top: -0.5625rem;
+    border-radius: 999px;
+    border: 2px solid var(--color-bg);
+    background: var(--color-brass);
+  }
+
+  input[type="range"]::-moz-range-track {
+    height: 0.25rem;
+    border-radius: 999px;
+    background: var(--color-border);
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 1.375rem;
+    height: 1.375rem;
+    border-radius: 999px;
+    border: 2px solid var(--color-bg);
+    background: var(--color-brass);
+  }
+}
